@@ -1,0 +1,12 @@
+source 'https://github.com/CocoaPods/Specs.git'
+use_frameworks!
+
+target 'YXTUnsatisfiableConstraintsDetector_Example', :exclusive => true do
+  pod 'YXTUnsatisfiableConstraintsDetector', :path => '../'
+end
+
+target 'YXTUnsatisfiableConstraintsDetector_Tests', :exclusive => true do
+  pod 'YXTUnsatisfiableConstraintsDetector', :path => '../'
+
+  
+end
