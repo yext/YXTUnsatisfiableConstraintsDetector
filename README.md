@@ -23,6 +23,8 @@ The example project shows a use of the detector to highlight `UIViews` with unsa
 
 ## Requirements
 
+YXTUnsatisfiableConstraintsDetector supports projects for iOS 7 and above.
+
 ## Installation
 
 ### Manual Install
