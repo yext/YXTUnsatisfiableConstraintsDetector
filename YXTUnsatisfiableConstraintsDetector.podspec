@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
   s.name             = "YXTUnsatisfiableConstraintsDetector"
   s.version          = "0.1.0"
-  s.summary          = "A short description of YXTUnsatisfiableConstraintsDetector."
+  s.summary          = "A utility for detecting unsatisfiable constraint errors and calling back to allow automated runtime handling."
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -17,13 +17,16 @@ Pod::Spec.new do |s|
 #   * Write the description between the DESC delimiters below.
 #   * Finally, don't worry about the indent, CocoaPods strips it!  
   s.description      = <<-DESC
+  YXTUnsatisfiableConstraintsDetector is a debugging tool that catches unsatisfiable constraint errors as they appear at the console and provides call backs either directly to blocks or via NSNotificationCenter. This allows such errors to be handled at runtime.
+
+This tool is intended for debugging only, and has not been designed for production-level performance.
                        DESC
 
-  s.homepage         = "https://github.com/<GITHUB_USERNAME>/YXTUnsatisfiableConstraintsDetector"
+  s.homepage         = "https://github.com/yext/YXTUnsatisfiableConstraintsDetector"
   # s.screenshots     = "www.example.com/screenshots_1", "www.example.com/screenshots_2"
   s.license          = 'MIT'
-  s.author           = { "Thomas Elliott" => "tom.w.elliott@gmail.com" }
-  s.source           = { :git => "https://github.com/<GITHUB_USERNAME>/YXTUnsatisfiableConstraintsDetector.git", :tag => s.version.to_s }
+  s.author           = { "Tom Elliott" => "telliott@yext.com" }
+  s.source           = { :git => "https://github.com/yext/YXTUnsatisfiableConstraintsDetector.git", :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.platform     = :ios, '7.0'
