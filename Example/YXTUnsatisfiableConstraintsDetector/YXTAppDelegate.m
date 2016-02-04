@@ -7,12 +7,23 @@
 //
 
 #import "YXTAppDelegate.h"
+#import "YXTUnsatisfiableConstraintsDetector.h"
 
 @implementation YXTAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+    YXTUnsatisfiableConstraintsDetector *detector = [[YXTUnsatisfiableConstraintsDetector alloc] init];
+    [detector registerBlock:^(UIView *view){
+        if(view != nil){
+            dispatch_async(dispatch_get_main_queue(), ^(void){
+                view.layer.borderColor = [UIColor redColor].CGColor;
+                view.layer.borderWidth = 3.0;
+            });
+        }
+    }];
+    [detector beginMonitoring];
+    
     return YES;
 }
 

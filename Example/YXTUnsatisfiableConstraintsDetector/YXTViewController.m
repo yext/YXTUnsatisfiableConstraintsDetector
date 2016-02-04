@@ -7,7 +7,6 @@
 //
 
 #import "YXTViewController.h"
-#import "YXTUnsatisfiableConstraintsDetector.h"
 
 @interface YXTViewController ()
 
@@ -18,19 +17,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    YXTUnsatisfiableConstraintsDetector *detector = [[YXTUnsatisfiableConstraintsDetector alloc] init];
-    
-    [detector registerBlock:^(UIView *view){
-        if(view != nil){
-            dispatch_async(dispatch_get_main_queue(), ^(void){
-                view.layer.borderColor = [UIColor redColor].CGColor;
-                view.layer.borderWidth = 3.0;
-            });
-        }
-    }];
-    
-    [detector beginMonitoring];
 }
 
 - (void)didReceiveMemoryWarning
