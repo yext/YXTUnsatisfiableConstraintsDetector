@@ -1,0 +1,14 @@
+PODS:
+  - YXTUnsatisfiableConstraintsDetector (0.1.0)
+
+DEPENDENCIES:
+  - YXTUnsatisfiableConstraintsDetector (from `../`)
+
+EXTERNAL SOURCES:
+  YXTUnsatisfiableConstraintsDetector:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  YXTUnsatisfiableConstraintsDetector: bff169773a881c5bf5734eb6aaa13bb72f771acf
+
+COCOAPODS: 0.39.0

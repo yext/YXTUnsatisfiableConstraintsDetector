@@ -23,6 +23,9 @@
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
 		AEDC829DF8BFA54820FF6975 /* Pods_YXTUnsatisfiableConstraintsDetector_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 113308F2F721F53AA14C3334 /* Pods_YXTUnsatisfiableConstraintsDetector_Tests.framework */; };
+		E21F4E0B1C63892C00F3ADD3 /* SideBySideView.m in Sources */ = {isa = PBXBuildFile; fileRef = E21F4E061C63892C00F3ADD3 /* SideBySideView.m */; };
+		E21F4E0C1C63892C00F3ADD3 /* UnsatisfiableView.m in Sources */ = {isa = PBXBuildFile; fileRef = E21F4E081C63892C00F3ADD3 /* UnsatisfiableView.m */; };
+		E21F4E0D1C63892C00F3ADD3 /* SatisfiableView.m in Sources */ = {isa = PBXBuildFile; fileRef = E21F4E0A1C63892C00F3ADD3 /* SatisfiableView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +68,12 @@
 		C690E03CB20382283131AB06 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		CB51781EACC111AA82137EE7 /* Pods-YXTUnsatisfiableConstraintsDetector_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YXTUnsatisfiableConstraintsDetector_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-YXTUnsatisfiableConstraintsDetector_Example/Pods-YXTUnsatisfiableConstraintsDetector_Example.release.xcconfig"; sourceTree = "<group>"; };
 		D5CAA296DD046B24DA1B2561 /* YXTUnsatisfiableConstraintsDetector.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = YXTUnsatisfiableConstraintsDetector.podspec; path = ../YXTUnsatisfiableConstraintsDetector.podspec; sourceTree = "<group>"; };
+		E21F4E051C63892C00F3ADD3 /* SideBySideView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SideBySideView.h; sourceTree = "<group>"; };
+		E21F4E061C63892C00F3ADD3 /* SideBySideView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SideBySideView.m; sourceTree = "<group>"; };
+		E21F4E071C63892C00F3ADD3 /* UnsatisfiableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UnsatisfiableView.h; sourceTree = "<group>"; };
+		E21F4E081C63892C00F3ADD3 /* UnsatisfiableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UnsatisfiableView.m; sourceTree = "<group>"; };
+		E21F4E091C63892C00F3ADD3 /* SatisfiableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SatisfiableView.h; sourceTree = "<group>"; };
+		E21F4E0A1C63892C00F3ADD3 /* SatisfiableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SatisfiableView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +139,7 @@
 		6003F593195388D20070C39A /* Example for YXTUnsatisfiableConstraintsDetector */ = {
 			isa = PBXGroup;
 			children = (
+				E21F4E041C63891200F3ADD3 /* ExampleViews */,
 				6003F59C195388D20070C39A /* YXTAppDelegate.h */,
 				6003F59D195388D20070C39A /* YXTAppDelegate.m */,
 				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
@@ -191,6 +201,19 @@
 				17BECF39F26C7CCB1727C874 /* Pods-YXTUnsatisfiableConstraintsDetector_Tests.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		E21F4E041C63891200F3ADD3 /* ExampleViews */ = {
+			isa = PBXGroup;
+			children = (
+				E21F4E051C63892C00F3ADD3 /* SideBySideView.h */,
+				E21F4E061C63892C00F3ADD3 /* SideBySideView.m */,
+				E21F4E071C63892C00F3ADD3 /* UnsatisfiableView.h */,
+				E21F4E081C63892C00F3ADD3 /* UnsatisfiableView.m */,
+				E21F4E091C63892C00F3ADD3 /* SatisfiableView.h */,
+				E21F4E0A1C63892C00F3ADD3 /* SatisfiableView.m */,
+			);
+			name = ExampleViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -390,9 +413,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E21F4E0D1C63892C00F3ADD3 /* SatisfiableView.m in Sources */,
 				6003F59E195388D20070C39A /* YXTAppDelegate.m in Sources */,
 				6003F5A7195388D20070C39A /* YXTViewController.m in Sources */,
+				E21F4E0C1C63892C00F3ADD3 /* UnsatisfiableView.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
+				E21F4E0B1C63892C00F3ADD3 /* SideBySideView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

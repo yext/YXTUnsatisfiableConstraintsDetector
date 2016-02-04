@@ -1,0 +1,25 @@
+{
+  "name": "YXTUnsatisfiableConstraintsDetector",
+  "version": "0.1.0",
+  "summary": "A short description of YXTUnsatisfiableConstraintsDetector.",
+  "description": "",
+  "homepage": "https://github.com/<GITHUB_USERNAME>/YXTUnsatisfiableConstraintsDetector",
+  "license": "MIT",
+  "authors": {
+    "Thomas Elliott": "tom.w.elliott@gmail.com"
+  },
+  "source": {
+    "git": "https://github.com/<GITHUB_USERNAME>/YXTUnsatisfiableConstraintsDetector.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "7.0"
+  },
+  "requires_arc": true,
+  "source_files": "Pod/Classes/**/*",
+  "resource_bundles": {
+    "YXTUnsatisfiableConstraintsDetector": [
+      "Pod/Assets/*.png"
+    ]
+  }
+}

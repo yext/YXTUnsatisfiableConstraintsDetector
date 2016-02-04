@@ -1,0 +1,6 @@
+framework module Pods_YXTUnsatisfiableConstraintsDetector_Example {
+  umbrella header "Pods-YXTUnsatisfiableConstraintsDetector_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}
