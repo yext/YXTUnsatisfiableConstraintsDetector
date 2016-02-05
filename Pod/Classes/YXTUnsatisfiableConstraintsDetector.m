@@ -29,7 +29,7 @@
 }
 
 - (id) registerBlock:(void (^)(UIView*))handleUnsatisfiableConstraints {
-    return [self.center addObserverForName:YXTUnsatisfiableConstraintsDetectorDidDetectError object:nil queue:nil usingBlock:^(NSNotification * _Nonnull note) {
+    return [self.center addObserverForName:YXTUnsatisfiableConstraintsDetectorDidDetectError object:nil queue:nil usingBlock:^(NSNotification *note) {
         UIView *view = note.userInfo[@"view"];
         handleUnsatisfiableConstraints(view);
     }];
