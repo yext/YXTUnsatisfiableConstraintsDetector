@@ -8,6 +8,7 @@ language: objective-c
 # before_install:
 # - gem install cocoapods # Since Travis is not always on latest version
 # - pod install --project-directory=Example
+language: objective-c
 script:
-- set -o pipefail && xcodebuild test -workspace Example/YXTUnsatisfiableConstraintsDetector.xcworkspace -scheme YXTUnsatisfiableConstraintsDetector-Example -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO | xcpretty
+- xcodebuild -scheme SchemeName -destination 'platform=iOS Simulator,name=iPhone Retina (4-inch),OS=7.1' test | xcpretty
 - pod lib lint
