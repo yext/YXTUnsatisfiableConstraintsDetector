@@ -1,10 +1,5 @@
 # YXTUnsatisfiableConstraintsDetector
 
-[![CI Status](http://img.shields.io/travis/Thomas Elliott/YXTUnsatisfiableConstraintsDetector.svg?style=flat)](https://travis-ci.org/Thomas Elliott/YXTUnsatisfiableConstraintsDetector)
-[![Version](https://img.shields.io/cocoapods/v/YXTUnsatisfiableConstraintsDetector.svg?style=flat)](http://cocoapods.org/pods/YXTUnsatisfiableConstraintsDetector)
-[![License](https://img.shields.io/cocoapods/l/YXTUnsatisfiableConstraintsDetector.svg?style=flat)](http://cocoapods.org/pods/YXTUnsatisfiableConstraintsDetector)
-[![Platform](https://img.shields.io/cocoapods/p/YXTUnsatisfiableConstraintsDetector.svg?style=flat)](http://cocoapods.org/pods/YXTUnsatisfiableConstraintsDetector)
-
 A debugging tool that catches unsatisfiable constraint errors as they appear at the console and provides call backs either directly to blocks or via NSNotificationCenter. This allows such errors to be handled at runtime.
 
 This tool is intended for debugging only, and has not been designed for production-level performance.
