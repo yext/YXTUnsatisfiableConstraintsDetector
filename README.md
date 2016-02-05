@@ -53,9 +53,9 @@ You can set up a callback and start monitoring as below:
     YXTUnsatisfiableConstraintsDetector *detector = [[YXTUnsatisfiableConstraintsDetector alloc] init];
     [detector registerBlock:^(UIView *view){
         if(view != nil){
-            // Handle an error on the problem view here
+            // Handle an error on a specific view here
         }
-        // Perform any handling that does not expect a view
+	    // Perform any handling that does not require a view
     }];
     [detector beginMonitoring];
 
