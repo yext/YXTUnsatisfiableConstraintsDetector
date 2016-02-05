@@ -21,6 +21,7 @@
 
 - (id) init {
     if(self = [super init]){
+        self.lastLogCheck = [NSDate dateWithTimeIntervalSinceNow:-0.5];
         self.pollInterval = 0.5;
         self.center = [NSNotificationCenter defaultCenter];
     }
@@ -44,7 +45,7 @@
     [self.timer invalidate];
 }
 
-- (BOOL)checkForUnsatisfiableConstraints
+- (void)checkForUnsatisfiableConstraints
 {
     aslmsg q, m;
     
@@ -64,35 +65,34 @@
         if([line hasPrefix:@"Unable to simultaneously satisfy constraints."]){
             // Check this against all views
             [self searchForViolationsForMessage:line];
-            return YES;
         }
     }
     asl_release(r);
-    return NO;
 }
 
 - (void) searchForViolationsForMessage:(NSString *)message {
-    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0ul);
-    dispatch_async(queue, ^{
-        UIViewController *rootController = [[[UIApplication sharedApplication] keyWindow] rootViewController];
-        if(![self searchForViolationsInView:rootController.view forMessage:message]){
-            // Send event without view
-        }
-    });
+    UIViewController *rootController = [[[UIApplication sharedApplication] keyWindow] rootViewController];
+    UIView *foundView = [self searchForViolationsInView:rootController.view forMessage:message];
+    if(foundView != nil){
+        // Send notification
+        [self.center postNotificationName:YXTUnsatisfiableConstraintsDetectorDidDetectError object:self userInfo:@{@"view" : foundView}];
+    } else {
+        // Send event without view
+        [self.center postNotificationName:YXTUnsatisfiableConstraintsDetectorDidDetectError object:self];
+    }
 }
 
-- (BOOL) searchForViolationsInView:(UIView *) view forMessage:(NSString *)message {
+- (UIView *) searchForViolationsInView:(UIView *) view forMessage:(NSString *)message {
     if([view yxt_hasUnsatisfiableConstraintForMessage:message]){
-        // Send notification
-        [self.center postNotificationName:YXTUnsatisfiableConstraintsDetectorDidDetectError object:self userInfo:@{@"view" : view}];
-        return YES;
+        return view;
     }
     for (UIView *subview in view.subviews){
-        if([self searchForViolationsInView:subview forMessage:message]){
-            return YES;
+        UIView *foundView = [self searchForViolationsInView:subview forMessage:message];
+        if(foundView != nil){
+            return foundView;
         }
     }
-    return NO;
+    return nil;
 }
 
 @end
