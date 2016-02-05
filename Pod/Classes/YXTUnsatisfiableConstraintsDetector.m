@@ -21,20 +21,21 @@
 
 - (id) init {
     if(self = [super init]){
+        self.pollInterval = 0.5;
         self.center = [NSNotificationCenter defaultCenter];
     }
     return self;
 }
 
 - (id) registerBlock:(void (^)(UIView*))handleUnsatisfiableConstraints {
-    return [self.center addObserverForName:YXTConstraintVoilationMonitorDidDetectViolation object:nil queue:nil usingBlock:^(NSNotification * _Nonnull note) {
+    return [self.center addObserverForName:YXTUnsatisfiableConstraintsDetectorDidDetectError object:nil queue:nil usingBlock:^(NSNotification * _Nonnull note) {
         UIView *view = note.userInfo[@"view"];
         handleUnsatisfiableConstraints(view);
     }];
 }
 
 - (void) beginMonitoring {
-    self.timer = [NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(checkForUnsatisfiableConstraints) userInfo:nil repeats:YES];
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:self.pollInterval target:self selector:@selector(checkForUnsatisfiableConstraints) userInfo:nil repeats:YES];
     // Make an initial call
     [self checkForUnsatisfiableConstraints];
 }
@@ -83,7 +84,7 @@
 - (BOOL) searchForViolationsInView:(UIView *) view forMessage:(NSString *)message {
     if([view yxt_hasUnsatisfiableConstraintForMessage:message]){
         // Send notification
-        [self.center postNotificationName:YXTConstraintVoilationMonitorDidDetectViolation object:self userInfo:@{@"view" : view}];
+        [self.center postNotificationName:YXTUnsatisfiableConstraintsDetectorDidDetectError object:self userInfo:@{@"view" : view}];
         return YES;
     }
     for (UIView *subview in view.subviews){
