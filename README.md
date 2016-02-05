@@ -1,5 +1,7 @@
 # YXTUnsatisfiableConstraintsDetector
 
+ -[![CI Status](https://img.shields.io/travis/yext/YXTUnsatisfiableConstraintsDetector.svg?style=flat)](https://travis-ci.org/yext/YXTUnsatisfiableConstraintsDetector)
+
 A debugging tool that catches unsatisfiable constraint errors as they appear at the console and provides call backs either directly to blocks or via NSNotificationCenter. This allows such errors to be handled at runtime.
 
 This tool is intended for debugging only, and has not been designed for production-level performance.
