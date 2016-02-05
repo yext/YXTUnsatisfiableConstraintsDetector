@@ -45,16 +45,26 @@ To import the detector into a given source file:
 
     #import "YXTUnsatisfiableConstraintsDetector.h"
 
-You can set up a callback and start monitoring as below:
+You can then instantiate an instance of `YXTUnsatisfiableConstraintsDetector` and add callback blocks using the `registerBlock:` method. When all your blocks are configured, call `beginMonitoring` to start listening for errors.
 
-    YXTUnsatisfiableConstraintsDetector *detector = [[YXTUnsatisfiableConstraintsDetector alloc] init];
-    [detector registerBlock:^(UIView *view){
-        if(view != nil){
-            // Handle an error on a specific view here
-        }
-	    // Perform any handling that does not require a view
-    }];
-    [detector beginMonitoring];
+It is recommended to create a single instance of `YXTUnsatisfiableConstraintsDetector` in your AppDelegate's launch method, and to enclose this in a DEBUG check to ensure it is not called in release builds. For example, to register a callback that marks views with errors in red:
+
+    - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+    {
+    #ifdef DEBUG
+        YXTUnsatisfiableConstraintsDetector *detector = [[YXTUnsatisfiableConstraintsDetector alloc] init];
+        [detector registerBlock:^(UIView *view){
+            if(view != nil){
+                dispatch_async(dispatch_get_main_queue(), ^(void){
+                    view.layer.borderColor = [UIColor redColor].CGColor;
+                    view.layer.borderWidth = 3.0;
+                });
+            }
+        }];
+        [detector beginMonitoring];
+    #endif
+        return YES;
+    }
 
 Note that `view` may be null if the problem `UIView` is not currently in the view hierarchy.
 

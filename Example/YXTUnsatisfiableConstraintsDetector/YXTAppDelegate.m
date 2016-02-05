@@ -13,6 +13,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+#ifdef DEBUG
     YXTUnsatisfiableConstraintsDetector *detector = [[YXTUnsatisfiableConstraintsDetector alloc] init];
     [detector registerBlock:^(UIView *view){
         if(view != nil){
@@ -23,7 +24,7 @@
         }
     }];
     [detector beginMonitoring];
-    
+#endif
     return YES;
 }
 
