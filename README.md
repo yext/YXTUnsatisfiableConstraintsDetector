@@ -30,8 +30,6 @@ To install manually, copy the files under *Pod/Classes* into your project.
 
 ### CocoaPods
 
-NOTE: This project has not yet been submitted to CocoaPods
-
 YXTUnsatisfiableConstraintsDetector is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
