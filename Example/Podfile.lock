@@ -9,6 +9,6 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  YXTUnsatisfiableConstraintsDetector: bff169773a881c5bf5734eb6aaa13bb72f771acf
+  YXTUnsatisfiableConstraintsDetector: 116e8c944f418bd4f7b92e910b93d0fa626822e3
 
 COCOAPODS: 0.39.0

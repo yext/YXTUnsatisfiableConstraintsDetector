@@ -45,7 +45,7 @@
     [unsatisfiable setNeedsLayout];
     [unsatisfiable layoutIfNeeded];
     
-    [self waitForExpectationsWithTimeout:1 handler:nil];
+    [self waitForExpectationsWithTimeout:5 handler:nil];
     
     [detector stopMonitoring];
     

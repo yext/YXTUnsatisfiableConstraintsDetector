@@ -1,15 +1,15 @@
 {
   "name": "YXTUnsatisfiableConstraintsDetector",
   "version": "0.1.0",
-  "summary": "A short description of YXTUnsatisfiableConstraintsDetector.",
-  "description": "",
-  "homepage": "https://github.com/<GITHUB_USERNAME>/YXTUnsatisfiableConstraintsDetector",
+  "summary": "A utility for detecting unsatisfiable constraint errors and calling back to allow automated runtime handling.",
+  "description": "YXTUnsatisfiableConstraintsDetector is a debugging tool that catches unsatisfiable constraint errors as they appear at the console and provides call backs either directly to blocks or via NSNotificationCenter. This allows such errors to be handled at runtime.\n\nThis tool is intended for debugging only, and has not been designed for production-level performance.",
+  "homepage": "https://github.com/yext/YXTUnsatisfiableConstraintsDetector",
   "license": "MIT",
   "authors": {
-    "Thomas Elliott": "tom.w.elliott@gmail.com"
+    "Tom Elliott": "telliott@yext.com"
   },
   "source": {
-    "git": "https://github.com/<GITHUB_USERNAME>/YXTUnsatisfiableConstraintsDetector.git",
+    "git": "https://github.com/yext/YXTUnsatisfiableConstraintsDetector.git",
     "tag": "0.1.0"
   },
   "platforms": {

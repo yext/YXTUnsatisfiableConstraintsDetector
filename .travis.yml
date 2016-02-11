@@ -10,5 +10,5 @@ language: objective-c
 # - pod install --project-directory=Example
 language: objective-c
 script:
-- xcodebuild -scheme SchemeName -destination 'platform=iOS Simulator,name=iPhone Retina (4-inch),OS=7.1' test | xcpretty
+- xcodebuild -workspace Example/YXTUnsatisfiableConstraintsDetector.xcworkspace -scheme YXTUnsatisfiableConstraintsDetector-Example -destination 'platform=iOS Simulator,name=iPhone Retina (4-inch),OS=7.1' test | xcpretty
 - pod lib lint
