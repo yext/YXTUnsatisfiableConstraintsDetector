@@ -7,6 +7,9 @@
 //
 
 @import XCTest;
+#import "UnsatisfiableView.h"
+#import "SatisfiableView.h"
+#import "YXTUnsatisfiableConstraintsDetector.h"
 
 @interface Tests : XCTestCase
 
@@ -26,8 +29,26 @@
     [super tearDown];
 }
 
-- (void)testExample
-{
+// Verify that errors from a view that isn't visible on screen are still handled
+- (void) testViewOutsideHierarchy {
+    
+    XCTestExpectation *constraintErrorExp = [self expectationWithDescription:@"Expectation for constraint error"];
+    
+    YXTUnsatisfiableConstraintsDetector *detector = [[YXTUnsatisfiableConstraintsDetector alloc] init];
+    [detector registerBlock:^(UIView *view){
+        XCTAssertNil(view);
+        [constraintErrorExp fulfill];
+    }];
+    [detector beginMonitoring];
+    
+    UIView *unsatisfiable = [[UnsatisfiableView alloc] initWithFrame:CGRectMake(0,0,100,100)];
+    [unsatisfiable setNeedsLayout];
+    [unsatisfiable layoutIfNeeded];
+    
+    [self waitForExpectationsWithTimeout:1 handler:nil];
+    
+    [detector stopMonitoring];
+    
 }
 
 @end

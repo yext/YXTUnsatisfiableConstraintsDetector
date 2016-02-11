@@ -26,6 +26,15 @@
 		E21F4E0B1C63892C00F3ADD3 /* SideBySideView.m in Sources */ = {isa = PBXBuildFile; fileRef = E21F4E061C63892C00F3ADD3 /* SideBySideView.m */; };
 		E21F4E0C1C63892C00F3ADD3 /* UnsatisfiableView.m in Sources */ = {isa = PBXBuildFile; fileRef = E21F4E081C63892C00F3ADD3 /* UnsatisfiableView.m */; };
 		E21F4E0D1C63892C00F3ADD3 /* SatisfiableView.m in Sources */ = {isa = PBXBuildFile; fileRef = E21F4E0A1C63892C00F3ADD3 /* SatisfiableView.m */; };
+		E24407731C6CBBDD00824838 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E24407721C6CBBDD00824838 /* main.m */; };
+		E24407761C6CBBDD00824838 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E24407751C6CBBDD00824838 /* AppDelegate.m */; };
+		E24407791C6CBBDD00824838 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E24407781C6CBBDD00824838 /* ViewController.m */; };
+		E244077C1C6CBBDD00824838 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E244077A1C6CBBDD00824838 /* Main.storyboard */; };
+		E244077E1C6CBBDD00824838 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E244077D1C6CBBDD00824838 /* Assets.xcassets */; };
+		E24407811C6CBBDD00824838 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E244077F1C6CBBDD00824838 /* LaunchScreen.storyboard */; };
+		E244078A1C6CBC4E00824838 /* SatisfiableView.m in Sources */ = {isa = PBXBuildFile; fileRef = E21F4E0A1C63892C00F3ADD3 /* SatisfiableView.m */; };
+		E244078B1C6CBC5100824838 /* UnsatisfiableView.m in Sources */ = {isa = PBXBuildFile; fileRef = E21F4E081C63892C00F3ADD3 /* UnsatisfiableView.m */; };
+		E244078C1C6CBC5400824838 /* SideBySideView.m in Sources */ = {isa = PBXBuildFile; fileRef = E21F4E061C63892C00F3ADD3 /* SideBySideView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +44,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 6003F589195388D20070C39A;
 			remoteInfo = YXTUnsatisfiableConstraintsDetector;
+		};
+		E24407861C6CBBEC00824838 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6003F582195388D10070C39A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E244076E1C6CBBDD00824838;
+			remoteInfo = UnitTestingApp;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -74,6 +90,16 @@
 		E21F4E081C63892C00F3ADD3 /* UnsatisfiableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UnsatisfiableView.m; sourceTree = "<group>"; };
 		E21F4E091C63892C00F3ADD3 /* SatisfiableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SatisfiableView.h; sourceTree = "<group>"; };
 		E21F4E0A1C63892C00F3ADD3 /* SatisfiableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SatisfiableView.m; sourceTree = "<group>"; };
+		E244076F1C6CBBDD00824838 /* UnitTestingApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UnitTestingApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E24407721C6CBBDD00824838 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		E24407741C6CBBDD00824838 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		E24407751C6CBBDD00824838 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		E24407771C6CBBDD00824838 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		E24407781C6CBBDD00824838 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		E244077B1C6CBBDD00824838 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E244077D1C6CBBDD00824838 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E24407801C6CBBDD00824838 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E24407821C6CBBDD00824838 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +125,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E244076C1C6CBBDD00824838 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -108,6 +141,7 @@
 				60FF7A9C1954A5C5007DD14C /* Podspec Metadata */,
 				6003F593195388D20070C39A /* Example for YXTUnsatisfiableConstraintsDetector */,
 				6003F5B5195388D20070C39A /* Tests */,
+				E24407701C6CBBDD00824838 /* UnitTestingApp */,
 				6003F58C195388D20070C39A /* Frameworks */,
 				6003F58B195388D20070C39A /* Products */,
 				7331911A402220EEA4C44194 /* Pods */,
@@ -119,6 +153,7 @@
 			children = (
 				6003F58A195388D20070C39A /* YXTUnsatisfiableConstraintsDetector_Example.app */,
 				6003F5AE195388D20070C39A /* YXTUnsatisfiableConstraintsDetector_Tests.xctest */,
+				E244076F1C6CBBDD00824838 /* UnitTestingApp.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -216,6 +251,30 @@
 			name = ExampleViews;
 			sourceTree = "<group>";
 		};
+		E24407701C6CBBDD00824838 /* UnitTestingApp */ = {
+			isa = PBXGroup;
+			children = (
+				E24407741C6CBBDD00824838 /* AppDelegate.h */,
+				E24407751C6CBBDD00824838 /* AppDelegate.m */,
+				E24407771C6CBBDD00824838 /* ViewController.h */,
+				E24407781C6CBBDD00824838 /* ViewController.m */,
+				E244077A1C6CBBDD00824838 /* Main.storyboard */,
+				E244077D1C6CBBDD00824838 /* Assets.xcassets */,
+				E244077F1C6CBBDD00824838 /* LaunchScreen.storyboard */,
+				E24407821C6CBBDD00824838 /* Info.plist */,
+				E24407711C6CBBDD00824838 /* Supporting Files */,
+			);
+			path = UnitTestingApp;
+			sourceTree = "<group>";
+		};
+		E24407711C6CBBDD00824838 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E24407721C6CBBDD00824838 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -254,11 +313,29 @@
 			);
 			dependencies = (
 				6003F5B4195388D20070C39A /* PBXTargetDependency */,
+				E24407871C6CBBEC00824838 /* PBXTargetDependency */,
 			);
 			name = YXTUnsatisfiableConstraintsDetector_Tests;
 			productName = YXTUnsatisfiableConstraintsDetectorTests;
 			productReference = 6003F5AE195388D20070C39A /* YXTUnsatisfiableConstraintsDetector_Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		E244076E1C6CBBDD00824838 /* UnitTestingApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E24407851C6CBBDD00824838 /* Build configuration list for PBXNativeTarget "UnitTestingApp" */;
+			buildPhases = (
+				E244076B1C6CBBDD00824838 /* Sources */,
+				E244076C1C6CBBDD00824838 /* Frameworks */,
+				E244076D1C6CBBDD00824838 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = UnitTestingApp;
+			productName = UnitTestingApp;
+			productReference = E244076F1C6CBBDD00824838 /* UnitTestingApp.app */;
+			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
@@ -271,7 +348,10 @@
 				ORGANIZATIONNAME = "Thomas Elliott";
 				TargetAttributes = {
 					6003F5AD195388D20070C39A = {
-						TestTargetID = 6003F589195388D20070C39A;
+						TestTargetID = E244076E1C6CBBDD00824838;
+					};
+					E244076E1C6CBBDD00824838 = {
+						CreatedOnToolsVersion = 7.2.1;
 					};
 				};
 			};
@@ -290,6 +370,7 @@
 			targets = (
 				6003F589195388D20070C39A /* YXTUnsatisfiableConstraintsDetector_Example */,
 				6003F5AD195388D20070C39A /* YXTUnsatisfiableConstraintsDetector_Tests */,
+				E244076E1C6CBBDD00824838 /* UnitTestingApp */,
 			);
 		};
 /* End PBXProject section */
@@ -310,6 +391,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				6003F5BA195388D20070C39A /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E244076D1C6CBBDD00824838 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E24407811C6CBBDD00824838 /* LaunchScreen.storyboard in Resources */,
+				E244077E1C6CBBDD00824838 /* Assets.xcassets in Resources */,
+				E244077C1C6CBBDD00824838 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -426,7 +517,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E244078B1C6CBC5100824838 /* UnsatisfiableView.m in Sources */,
+				E244078A1C6CBC4E00824838 /* SatisfiableView.m in Sources */,
 				6003F5BC195388D20070C39A /* Tests.m in Sources */,
+				E244078C1C6CBC5400824838 /* SideBySideView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E244076B1C6CBBDD00824838 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E24407791C6CBBDD00824838 /* ViewController.m in Sources */,
+				E24407761C6CBBDD00824838 /* AppDelegate.m in Sources */,
+				E24407731C6CBBDD00824838 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -437,6 +541,11 @@
 			isa = PBXTargetDependency;
 			target = 6003F589195388D20070C39A /* YXTUnsatisfiableConstraintsDetector_Example */;
 			targetProxy = 6003F5B3195388D20070C39A /* PBXContainerItemProxy */;
+		};
+		E24407871C6CBBEC00824838 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E244076E1C6CBBDD00824838 /* UnitTestingApp */;
+			targetProxy = E24407861C6CBBEC00824838 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -455,6 +564,22 @@
 				6003F5B9195388D20070C39A /* en */,
 			);
 			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		E244077A1C6CBBDD00824838 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E244077B1C6CBBDD00824838 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		E244077F1C6CBBDD00824838 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E24407801C6CBBDD00824838 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -584,7 +709,7 @@
 				INFOPLIST_FILE = "Tests/Tests-Info.plist";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/YXTUnsatisfiableConstraintsDetector_Example.app/YXTUnsatisfiableConstraintsDetector_Example";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/UnitTestingApp.app/UnitTestingApp";
 				WRAPPER_EXTENSION = xctest;
 			};
 			name = Debug;
@@ -604,8 +729,43 @@
 				INFOPLIST_FILE = "Tests/Tests-Info.plist";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/YXTUnsatisfiableConstraintsDetector_Example.app/YXTUnsatisfiableConstraintsDetector_Example";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/UnitTestingApp.app/UnitTestingApp";
 				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+		E24407831C6CBBDD00824838 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = UnitTestingApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = io.telliott.UnitTestingApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		E24407841C6CBBDD00824838 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = UnitTestingApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = io.telliott.UnitTestingApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
 		};
@@ -638,6 +798,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		E24407851C6CBBDD00824838 /* Build configuration list for PBXNativeTarget "UnitTestingApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E24407831C6CBBDD00824838 /* Debug */,
+				E24407841C6CBBDD00824838 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
