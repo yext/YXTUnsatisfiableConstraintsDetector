@@ -1,15 +1,9 @@
-# references:
-# * http://www.objc.io/issue-6/travis-ci.html
-# * https://github.com/supermarin/xcpretty#usage
-
-language: objective-c
-# cache: cocoapods
-# podfile: Example/Podfile
-# before_install:
-# - gem install cocoapods # Since Travis is not always on latest version
-# - pod install --project-directory=Example
 language: objective-c
 osx_image: xcode7.2
-script:
-- xcodebuild -workspace Example/YXTUnsatisfiableConstraintsDetector.xcworkspace -scheme YXTUnsatisfiableConstraintsDetector-Example -destination 'platform=iOS Simulator,name=iPhone 6,OS=8.1' test | xcpretty 
+before_script:
 - pod lib lint
+language: objective-c
+xcode_workspace: Example/YXTUnsatisfiableConstraintsDetector.xcworkspace 
+xcode_scheme: YXTUnsatisfiableConstraintsDetector-Example 
+xcode_sdk: iphonesimulator
+# Command: xctool test -scheme YXTUnsatisfiableConstraintsDetector-Example -workspace Example/YXTUnsatisfiableConstraintsDetector.xcworkspace -sdk iphonesimulator
