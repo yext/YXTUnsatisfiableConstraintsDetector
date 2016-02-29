@@ -29,12 +29,48 @@
     [super tearDown];
 }
 
+// Verify that an empty view does not trigger a constraints issue
+- (void) testEmptyView {
+    
+    YXTUnsatisfiableConstraintsDetector *detector = [YXTUnsatisfiableConstraintsDetector sharedInstance];
+    [detector registerBlock:^(UIView *view){
+        XCTFail(@"Did not expect error to be raised");
+    }];
+    
+    UIView *empty = [[UIView alloc] initWithFrame:CGRectMake(0,0,100,100)];
+    [empty setNeedsLayout];
+    [empty layoutIfNeeded];
+    
+    [detector checkForUnsatisfiableConstraints];
+
+}
+
 // Verify that errors from a view that isn't visible on screen are still handled
 - (void) testViewOutsideHierarchy {
     
+    __block BOOL detectedError = NO;
+    
+    YXTUnsatisfiableConstraintsDetector *detector = [YXTUnsatisfiableConstraintsDetector sharedInstance];
+    [detector registerBlock:^(UIView *view){
+        XCTAssertNil(view);
+        detectedError = YES;
+    }];
+    
+    UIView *unsatisfiable = [[UnsatisfiableView alloc] initWithFrame:CGRectMake(0,0,100,100)];
+    [unsatisfiable setNeedsLayout];
+    [unsatisfiable layoutIfNeeded];
+    
+    [detector checkForUnsatisfiableConstraints];
+    
+    XCTAssert(detectedError);
+}
+
+// Verify that errors are picked up by polling
+- (void) testPolling {
+    
     XCTestExpectation *constraintErrorExp = [self expectationWithDescription:@"Expectation for constraint error"];
     
-    YXTUnsatisfiableConstraintsDetector *detector = [[YXTUnsatisfiableConstraintsDetector alloc] init];
+    YXTUnsatisfiableConstraintsDetector *detector = [YXTUnsatisfiableConstraintsDetector sharedInstance];
     [detector registerBlock:^(UIView *view){
         XCTAssertNil(view);
         [constraintErrorExp fulfill];

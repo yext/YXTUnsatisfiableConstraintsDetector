@@ -21,6 +21,15 @@
 
 #define MSG_SEQUENCE_KEY ASL_KEY_MSG_ID
 
++ (instancetype)sharedInstance {
+    static dispatch_once_t onceToken;
+    static id obj;
+    dispatch_once(&onceToken, ^{
+        obj = [[YXTUnsatisfiableConstraintsDetector alloc] init];
+    });
+    return obj;
+}
+
 - (id) init {
     if(self = [super init]){
         [self setLastLog];

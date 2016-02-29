@@ -14,7 +14,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
 #ifdef DEBUG
-    YXTUnsatisfiableConstraintsDetector *detector = [[YXTUnsatisfiableConstraintsDetector alloc] init];
+    YXTUnsatisfiableConstraintsDetector *detector = [YXTUnsatisfiableConstraintsDetector sharedInstance];
     [detector registerBlock:^(UIView *view){
         if(view != nil){
             dispatch_async(dispatch_get_main_queue(), ^(void){

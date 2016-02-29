@@ -16,6 +16,13 @@
 #define YXTUnsatisfiableConstraintsDetectorDidDetectError @"YXTUnsatisfiableConstraintsDetectorDidDetectError"
 
 /**
+ * Gets the singleton instance of the unsatisfiable constraints detector.
+ *
+ * @return Unsatisfiable constraints detector.
+ */
++ (instancetype)sharedInstance;
+
+/**
  *  Polling interval for checking console logs for errors in seconds. Default 0.5s.
  */
 @property (nonatomic) NSTimeInterval pollInterval;
@@ -38,5 +45,10 @@
  *  @return A reference to the notification observer for cancellation.
  */
 - (id) registerBlock:(void (^)(UIView*))handleUnsatisfiableConstraints;
+
+/**
+ *  Force a check for unsatisfiable constraints.
+ */
+- (void)checkForUnsatisfiableConstraints;
 
 @end
