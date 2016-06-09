@@ -46,6 +46,8 @@
  */
 - (id) registerBlock:(void (^)(UIView*))handleUnsatisfiableConstraints;
 
+- (void) deregisterBlock:(id)blockRef;
+
 /**
  *  Force a check for unsatisfiable constraints.
  */

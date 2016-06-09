@@ -46,6 +46,10 @@
     }];
 }
 
+- (void) deregisterBlock:(id)blockRef {
+    [self.center removeObserver:blockRef];
+}
+
 - (void) beginMonitoring {
     self.timer = [NSTimer scheduledTimerWithTimeInterval:self.pollInterval target:self selector:@selector(checkForUnsatisfiableConstraints) userInfo:nil repeats:YES];
     // Make an initial call

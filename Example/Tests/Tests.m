@@ -51,7 +51,7 @@
     __block BOOL detectedError = NO;
     
     YXTUnsatisfiableConstraintsDetector *detector = [YXTUnsatisfiableConstraintsDetector sharedInstance];
-    [detector registerBlock:^(UIView *view){
+    id blockId = [detector registerBlock:^(UIView *view){
         XCTAssertNil(view);
         detectedError = YES;
     }];
@@ -63,6 +63,8 @@
     [detector checkForUnsatisfiableConstraints];
     
     XCTAssert(detectedError);
+    
+    [detector deregisterBlock:blockId];
 }
 
 // Verify that errors are picked up by polling
@@ -71,7 +73,7 @@
     XCTestExpectation *constraintErrorExp = [self expectationWithDescription:@"Expectation for constraint error"];
     
     YXTUnsatisfiableConstraintsDetector *detector = [YXTUnsatisfiableConstraintsDetector sharedInstance];
-    [detector registerBlock:^(UIView *view){
+    id blockId = [detector registerBlock:^(UIView *view){
         XCTAssertNil(view);
         [constraintErrorExp fulfill];
     }];
@@ -82,6 +84,8 @@
     [unsatisfiable layoutIfNeeded];
     
     [self waitForExpectationsWithTimeout:5 handler:nil];
+    
+    [detector deregisterBlock:blockId];
     
     [detector stopMonitoring];
     
