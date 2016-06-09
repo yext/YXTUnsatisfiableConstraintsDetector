@@ -6,5 +6,5 @@ language: objective-c
 xcode_workspace: Example/YXTUnsatisfiableConstraintsDetector.xcworkspace 
 xcode_scheme: YXTUnsatisfiableConstraintsDetector-Example 
 xcode_sdk: iphonesimulator
-script: set -o pipefail && xcodebuild test -workspace Example/YXTUnsatisfiableConstraintsDetector.xcworkspace -scheme YXTUnsatisfiableConstraintsDetector-Example -sdk iphonesimulator9.3 | xcpretty
+script: set -o pipefail && xcodebuild test -workspace Example/YXTUnsatisfiableConstraintsDetector.xcworkspace -scheme YXTUnsatisfiableConstraintsDetector-Example -sdk iphonesimulator | xcpretty
 # Command: xctool test -scheme YXTUnsatisfiableConstraintsDetector-Example -workspace Example/YXTUnsatisfiableConstraintsDetector.xcworkspace -sdk iphonesimulator
